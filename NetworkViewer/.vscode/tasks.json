@@ -1,0 +1,23 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cmake",
+			"label": "CMake: クリーンしてリビルド",
+			"command": "cleanRebuild",
+			"targets": [
+				"[N/A - キットの選択]"
+			],
+			"group": "build",
+			"problemMatcher": [],
+			"detail": "CMake テンプレート クリーンしてリビルド タスク"
+		},
+		{
+			"type": "cmake",
+			"label": "CMake: インストール",
+			"command": "install",
+			"problemMatcher": [],
+			"detail": "CMake テンプレート インストール タスク"
+		}
+	]
+}
