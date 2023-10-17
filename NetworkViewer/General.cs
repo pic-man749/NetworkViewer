@@ -45,12 +45,11 @@ namespace NetworkViewer {
         }
 
         // get payload hex string
-        public static string GetHexDataString(string str) {
+        public static string GetHexDataString(Byte[] data) {
             string result = "";
             result += "      | 00 01 02 03 04 05 06 07  08 09 0A 0B 0C 0D 0E 0F" + Environment.NewLine;
             result += "------+--------------------------------------------------" + Environment.NewLine;
             result += " 0000 | ";
-            Byte[] data = Encoding.UTF8.GetBytes(str);
             for(int i = 0; i < data.Length; i++) {
                 // print data
                 result += string.Format("{0:X2} ", data[i]);

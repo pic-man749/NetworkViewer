@@ -90,7 +90,7 @@ namespace NetworkViewer {
                     string senderAddr = res.RemoteEndPoint.Address.ToString() + ":" + res.RemoteEndPoint.Port.ToString();
                     writeUdpRecvTb("request from " + senderAddr + ", data : " + req);
                     if(cbUdpRecvShowHexData.Checked) {
-                        writeUdpRecvTb("hex data:" + Environment.NewLine + General.GetHexDataString(req));
+                        writeUdpRecvTb("hex data:" + Environment.NewLine + General.GetHexDataString(requestBytes));
                     }
                 }
             }
@@ -140,7 +140,7 @@ namespace NetworkViewer {
             string serverAddr = result.RemoteEndPoint.Address.ToString() + ":" + result.RemoteEndPoint.Port.ToString();
             writeUdpClientTb("response from " + serverAddr + ", data : " + res);
             if(cbUdpClientShowHexData.Checked) {
-                writeUdpClientTb("hex data:" + Environment.NewLine + General.GetHexDataString(res));
+                writeUdpClientTb("hex data:" + Environment.NewLine + General.GetHexDataString(responseBytes));
             }
             btnUdpClientSend.Enabled = true;
 
@@ -194,7 +194,7 @@ namespace NetworkViewer {
                     string senderAddr = res.RemoteEndPoint.Address.ToString() + ":" + res.RemoteEndPoint.Port.ToString();
                     writeUdpServerLogTb("request from " + senderAddr + ", data : " + req);
                     if(cbUdpServerShowHexData.Checked) {
-                        writeUdpServerLogTb("hex data:" + Environment.NewLine + General.GetHexDataString(req));
+                        writeUdpServerLogTb("hex data:" + Environment.NewLine + General.GetHexDataString(requestBytes));
                     }
 
                     var sender = Task.Run(async () => {
@@ -283,12 +283,13 @@ namespace NetworkViewer {
                 await msResponse.WriteAsync(buffer, 0, size);
             } while(stream.DataAvailable || buffer[size - 1] != '\n');
             // convert to string
-            string response = Encoding.UTF8.GetString(msResponse.GetBuffer(), 0, (int)msResponse.Length);
+            Byte[] byteData = msResponse.GetBuffer();
+            string response = Encoding.UTF8.GetString(byteData, 0, (int)byteData.Length);
             msResponse.Close();
 
             writeTcpClientTb("receive response, data : " + response);
             if(cbTcpClientShowHexData.Checked) {
-                writeTcpClientTb("hex data:" + Environment.NewLine + General.GetHexDataString(response));
+                writeTcpClientTb("hex data:" + Environment.NewLine + General.GetHexDataString(byteData));
             }
             stream.Close();
             client.Close();
@@ -378,11 +379,12 @@ namespace NetworkViewer {
                     msRequest.Write(buffer, 0, size);
                 }
                 // convert to string
-                string request = Encoding.UTF8.GetString(msRequest.GetBuffer(), 0, (int)msRequest.Length);
+                Byte[] byteData = msRequest.GetBuffer();
+                string request = Encoding.UTF8.GetString(byteData, 0, (int)byteData.Length);
 
                 writeTcpServerTb("receive request, data : " + request);
                 if(cbTcpServerShowHexData.Checked) {
-                    writeTcpServerTb("hex data:" + Environment.NewLine + General.GetHexDataString(request));
+                    writeTcpServerTb("hex data:" + Environment.NewLine + General.GetHexDataString(byteData));
                 }
 
                 // send response
@@ -437,6 +439,23 @@ namespace NetworkViewer {
             this.tbTcpServerResponse.ReadOnly = cbTcpServerEchoMode.Checked;
             this.cbTcpServerAddTailLn.Enabled = !cbTcpServerEchoMode.Checked;
 
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e) {
+            Properties.Settings.Default.Save();
+        }
+
+        private void Form1_Shown(object sender, EventArgs e) {
+            // window position setting
+            int needRestorePosition = 0;
+            foreach(Screen scr in Screen.AllScreens) {
+                if(scr.WorkingArea.Contains(this.Location.X, this.Location.Y)) {
+                    needRestorePosition++;
+                }
+            }
+            if(needRestorePosition == 0) {
+                this.Location = new System.Drawing.Point(100, 100);
+            }
         }
     }
 }

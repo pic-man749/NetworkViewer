@@ -54,6 +54,7 @@
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.UdpAsClient = new System.Windows.Forms.GroupBox();
+            this.cbUdpClientHexMode = new System.Windows.Forms.CheckBox();
             this.cbUdpClientShowHexData = new System.Windows.Forms.CheckBox();
             this.tbUdpClientResponse = new System.Windows.Forms.TextBox();
             this.btnUdpClientClear = new System.Windows.Forms.Button();
@@ -78,6 +79,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.splitContainer6 = new System.Windows.Forms.SplitContainer();
             this.TcpAsClient = new System.Windows.Forms.GroupBox();
+            this.cbTcpClientHexMode = new System.Windows.Forms.CheckBox();
             this.cbTcpClientShowHexData = new System.Windows.Forms.CheckBox();
             this.tbTcpClientResponse = new System.Windows.Forms.TextBox();
             this.btnTcpClientClear = new System.Windows.Forms.Button();
@@ -100,8 +102,6 @@
             this.btnTcpServerListen = new System.Windows.Forms.Button();
             this.tbTcpServerPort = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.cbUdpClientHexMode = new System.Windows.Forms.CheckBox();
-            this.cbTcpClientHexMode = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -196,7 +196,7 @@
             // btnUdpSendClear
             // 
             this.btnUdpSendClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUdpSendClear.Location = new System.Drawing.Point(500, 82);
+            this.btnUdpSendClear.Location = new System.Drawing.Point(500, 85);
             this.btnUdpSendClear.Name = "btnUdpSendClear";
             this.btnUdpSendClear.Size = new System.Drawing.Size(75, 25);
             this.btnUdpSendClear.TabIndex = 7;
@@ -207,7 +207,7 @@
             // cbUdpSendHexMode
             // 
             this.cbUdpSendHexMode.AutoSize = true;
-            this.cbUdpSendHexMode.Location = new System.Drawing.Point(183, 85);
+            this.cbUdpSendHexMode.Location = new System.Drawing.Point(183, 87);
             this.cbUdpSendHexMode.Name = "cbUdpSendHexMode";
             this.cbUdpSendHexMode.Size = new System.Drawing.Size(81, 22);
             this.cbUdpSendHexMode.TabIndex = 6;
@@ -219,7 +219,7 @@
             this.cbUdpSendAddLn.AutoSize = true;
             this.cbUdpSendAddLn.Checked = true;
             this.cbUdpSendAddLn.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbUdpSendAddLn.Location = new System.Drawing.Point(89, 85);
+            this.cbUdpSendAddLn.Location = new System.Drawing.Point(89, 87);
             this.cbUdpSendAddLn.Name = "cbUdpSendAddLn";
             this.cbUdpSendAddLn.Size = new System.Drawing.Size(88, 22);
             this.cbUdpSendAddLn.TabIndex = 5;
@@ -233,18 +233,18 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbUdpSend.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.tbUdpSend.HideSelection = false;
-            this.tbUdpSend.Location = new System.Drawing.Point(7, 113);
+            this.tbUdpSend.Location = new System.Drawing.Point(7, 116);
             this.tbUdpSend.Multiline = true;
             this.tbUdpSend.Name = "tbUdpSend";
             this.tbUdpSend.ReadOnly = true;
             this.tbUdpSend.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbUdpSend.Size = new System.Drawing.Size(571, 595);
+            this.tbUdpSend.Size = new System.Drawing.Size(571, 592);
             this.tbUdpSend.TabIndex = 8;
             // 
             // tbnUdpSend
             // 
             this.tbnUdpSend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbnUdpSend.Location = new System.Drawing.Point(500, 53);
+            this.tbnUdpSend.Location = new System.Drawing.Point(500, 56);
             this.tbnUdpSend.Name = "tbnUdpSend";
             this.tbnUdpSend.Size = new System.Drawing.Size(75, 25);
             this.tbnUdpSend.TabIndex = 4;
@@ -256,7 +256,7 @@
             // 
             this.tbUdpSendPayload.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbUdpSendPayload.Location = new System.Drawing.Point(89, 53);
+            this.tbUdpSendPayload.Location = new System.Drawing.Point(89, 56);
             this.tbUdpSendPayload.Name = "tbUdpSendPayload";
             this.tbUdpSendPayload.Size = new System.Drawing.Size(405, 25);
             this.tbUdpSendPayload.TabIndex = 3;
@@ -264,7 +264,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 56);
+            this.label3.Location = new System.Drawing.Point(7, 59);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 18);
             this.label3.TabIndex = 4;
@@ -272,7 +272,7 @@
             // 
             // tbUdpSendPort
             // 
-            this.tbUdpSendPort.Location = new System.Drawing.Point(245, 20);
+            this.tbUdpSendPort.Location = new System.Drawing.Point(245, 25);
             this.tbUdpSendPort.MaxLength = 5;
             this.tbUdpSendPort.Name = "tbUdpSendPort";
             this.tbUdpSendPort.Size = new System.Drawing.Size(131, 25);
@@ -281,7 +281,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(226, 23);
+            this.label2.Location = new System.Drawing.Point(226, 28);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(13, 18);
             this.label2.TabIndex = 2;
@@ -289,7 +289,7 @@
             // 
             // tbUdpSendIp
             // 
-            this.tbUdpSendIp.Location = new System.Drawing.Point(89, 20);
+            this.tbUdpSendIp.Location = new System.Drawing.Point(89, 25);
             this.tbUdpSendIp.MaxLength = 15;
             this.tbUdpSendIp.Name = "tbUdpSendIp";
             this.tbUdpSendIp.Size = new System.Drawing.Size(131, 25);
@@ -299,7 +299,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 27);
+            this.label1.Location = new System.Drawing.Point(7, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 18);
             this.label1.TabIndex = 0;
@@ -328,7 +328,7 @@
             this.cbUdpRecvShowHexData.AutoSize = true;
             this.cbUdpRecvShowHexData.Checked = true;
             this.cbUdpRecvShowHexData.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbUdpRecvShowHexData.Location = new System.Drawing.Point(367, 25);
+            this.cbUdpRecvShowHexData.Location = new System.Drawing.Point(367, 27);
             this.cbUdpRecvShowHexData.Name = "cbUdpRecvShowHexData";
             this.cbUdpRecvShowHexData.Size = new System.Drawing.Size(112, 22);
             this.cbUdpRecvShowHexData.TabIndex = 3;
@@ -342,18 +342,18 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbUdpRecv.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.tbUdpRecv.HideSelection = false;
-            this.tbUdpRecv.Location = new System.Drawing.Point(12, 54);
+            this.tbUdpRecv.Location = new System.Drawing.Point(12, 56);
             this.tbUdpRecv.Multiline = true;
             this.tbUdpRecv.Name = "tbUdpRecv";
             this.tbUdpRecv.ReadOnly = true;
             this.tbUdpRecv.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbUdpRecv.Size = new System.Drawing.Size(551, 653);
+            this.tbUdpRecv.Size = new System.Drawing.Size(551, 651);
             this.tbUdpRecv.TabIndex = 4;
             // 
             // btnUdpRecvClear
             // 
             this.btnUdpRecvClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUdpRecvClear.Location = new System.Drawing.Point(485, 23);
+            this.btnUdpRecvClear.Location = new System.Drawing.Point(485, 25);
             this.btnUdpRecvClear.Name = "btnUdpRecvClear";
             this.btnUdpRecvClear.Size = new System.Drawing.Size(75, 25);
             this.btnUdpRecvClear.TabIndex = 4;
@@ -363,7 +363,7 @@
             // 
             // btnUdpRecvListen
             // 
-            this.btnUdpRecvListen.Location = new System.Drawing.Point(229, 23);
+            this.btnUdpRecvListen.Location = new System.Drawing.Point(213, 25);
             this.btnUdpRecvListen.Name = "btnUdpRecvListen";
             this.btnUdpRecvListen.Size = new System.Drawing.Size(75, 25);
             this.btnUdpRecvListen.TabIndex = 2;
@@ -373,7 +373,7 @@
             // 
             // tbUdpRecvPort
             // 
-            this.tbUdpRecvPort.Location = new System.Drawing.Point(89, 23);
+            this.tbUdpRecvPort.Location = new System.Drawing.Point(76, 25);
             this.tbUdpRecvPort.MaxLength = 5;
             this.tbUdpRecvPort.Name = "tbUdpRecvPort";
             this.tbUdpRecvPort.Size = new System.Drawing.Size(131, 25);
@@ -382,7 +382,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 26);
+            this.label4.Location = new System.Drawing.Point(10, 28);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 18);
             this.label4.TabIndex = 0;
@@ -458,12 +458,23 @@
             this.UdpAsClient.TabStop = false;
             this.UdpAsClient.Text = "UDP client";
             // 
+            // cbUdpClientHexMode
+            // 
+            this.cbUdpClientHexMode.AutoSize = true;
+            this.cbUdpClientHexMode.Location = new System.Drawing.Point(177, 88);
+            this.cbUdpClientHexMode.Name = "cbUdpClientHexMode";
+            this.cbUdpClientHexMode.Size = new System.Drawing.Size(81, 22);
+            this.cbUdpClientHexMode.TabIndex = 6;
+            this.cbUdpClientHexMode.Text = "HexMode";
+            this.cbUdpClientHexMode.UseVisualStyleBackColor = true;
+            // 
             // cbUdpClientShowHexData
             // 
+            this.cbUdpClientShowHexData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbUdpClientShowHexData.AutoSize = true;
             this.cbUdpClientShowHexData.Checked = true;
             this.cbUdpClientShowHexData.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbUdpClientShowHexData.Location = new System.Drawing.Point(385, 87);
+            this.cbUdpClientShowHexData.Location = new System.Drawing.Point(385, 89);
             this.cbUdpClientShowHexData.Name = "cbUdpClientShowHexData";
             this.cbUdpClientShowHexData.Size = new System.Drawing.Size(112, 22);
             this.cbUdpClientShowHexData.TabIndex = 7;
@@ -477,18 +488,18 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbUdpClientResponse.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.tbUdpClientResponse.HideSelection = false;
-            this.tbUdpClientResponse.Location = new System.Drawing.Point(6, 116);
+            this.tbUdpClientResponse.Location = new System.Drawing.Point(6, 118);
             this.tbUdpClientResponse.Multiline = true;
             this.tbUdpClientResponse.Name = "tbUdpClientResponse";
             this.tbUdpClientResponse.ReadOnly = true;
             this.tbUdpClientResponse.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbUdpClientResponse.Size = new System.Drawing.Size(571, 180);
+            this.tbUdpClientResponse.Size = new System.Drawing.Size(571, 178);
             this.tbUdpClientResponse.TabIndex = 8;
             // 
             // btnUdpClientClear
             // 
             this.btnUdpClientClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUdpClientClear.Location = new System.Drawing.Point(502, 85);
+            this.btnUdpClientClear.Location = new System.Drawing.Point(502, 87);
             this.btnUdpClientClear.Name = "btnUdpClientClear";
             this.btnUdpClientClear.Size = new System.Drawing.Size(75, 25);
             this.btnUdpClientClear.TabIndex = 8;
@@ -501,7 +512,7 @@
             this.cbUdpClientAddTailLn.AutoSize = true;
             this.cbUdpClientAddTailLn.Checked = true;
             this.cbUdpClientAddTailLn.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbUdpClientAddTailLn.Location = new System.Drawing.Point(83, 87);
+            this.cbUdpClientAddTailLn.Location = new System.Drawing.Point(83, 89);
             this.cbUdpClientAddTailLn.Name = "cbUdpClientAddTailLn";
             this.cbUdpClientAddTailLn.Size = new System.Drawing.Size(88, 22);
             this.cbUdpClientAddTailLn.TabIndex = 5;
@@ -523,7 +534,7 @@
             // 
             this.tbUdpClientRequest.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbUdpClientRequest.Location = new System.Drawing.Point(83, 56);
+            this.tbUdpClientRequest.Location = new System.Drawing.Point(83, 55);
             this.tbUdpClientRequest.Name = "tbUdpClientRequest";
             this.tbUdpClientRequest.Size = new System.Drawing.Size(414, 25);
             this.tbUdpClientRequest.TabIndex = 3;
@@ -531,7 +542,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(7, 59);
+            this.label9.Location = new System.Drawing.Point(6, 59);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(57, 18);
             this.label9.TabIndex = 14;
@@ -539,7 +550,7 @@
             // 
             // tbUdpClientPort
             // 
-            this.tbUdpClientPort.Location = new System.Drawing.Point(239, 23);
+            this.tbUdpClientPort.Location = new System.Drawing.Point(239, 24);
             this.tbUdpClientPort.MaxLength = 5;
             this.tbUdpClientPort.Name = "tbUdpClientPort";
             this.tbUdpClientPort.Size = new System.Drawing.Size(131, 25);
@@ -548,7 +559,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(220, 26);
+            this.label10.Location = new System.Drawing.Point(220, 27);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(13, 18);
             this.label10.TabIndex = 11;
@@ -556,7 +567,7 @@
             // 
             // tbUdpClientIp
             // 
-            this.tbUdpClientIp.Location = new System.Drawing.Point(83, 23);
+            this.tbUdpClientIp.Location = new System.Drawing.Point(83, 24);
             this.tbUdpClientIp.MaxLength = 15;
             this.tbUdpClientIp.Name = "tbUdpClientIp";
             this.tbUdpClientIp.Size = new System.Drawing.Size(131, 25);
@@ -566,7 +577,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(7, 26);
+            this.label11.Location = new System.Drawing.Point(6, 27);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(55, 18);
             this.label11.TabIndex = 8;
@@ -594,6 +605,7 @@
             // 
             // cbUdpServerShowHexData
             // 
+            this.cbUdpServerShowHexData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbUdpServerShowHexData.AutoSize = true;
             this.cbUdpServerShowHexData.Checked = true;
             this.cbUdpServerShowHexData.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -742,12 +754,23 @@
             this.TcpAsClient.TabStop = false;
             this.TcpAsClient.Text = "TCP client";
             // 
+            // cbTcpClientHexMode
+            // 
+            this.cbTcpClientHexMode.AutoSize = true;
+            this.cbTcpClientHexMode.Location = new System.Drawing.Point(169, 88);
+            this.cbTcpClientHexMode.Name = "cbTcpClientHexMode";
+            this.cbTcpClientHexMode.Size = new System.Drawing.Size(81, 22);
+            this.cbTcpClientHexMode.TabIndex = 6;
+            this.cbTcpClientHexMode.Text = "HexMode";
+            this.cbTcpClientHexMode.UseVisualStyleBackColor = true;
+            // 
             // cbTcpClientShowHexData
             // 
+            this.cbTcpClientShowHexData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbTcpClientShowHexData.AutoSize = true;
             this.cbTcpClientShowHexData.Checked = true;
             this.cbTcpClientShowHexData.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbTcpClientShowHexData.Location = new System.Drawing.Point(375, 87);
+            this.cbTcpClientShowHexData.Location = new System.Drawing.Point(378, 88);
             this.cbTcpClientShowHexData.Name = "cbTcpClientShowHexData";
             this.cbTcpClientShowHexData.Size = new System.Drawing.Size(112, 22);
             this.cbTcpClientShowHexData.TabIndex = 7;
@@ -761,20 +784,20 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbTcpClientResponse.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.tbTcpClientResponse.HideSelection = false;
-            this.tbTcpClientResponse.Location = new System.Drawing.Point(6, 116);
+            this.tbTcpClientResponse.Location = new System.Drawing.Point(6, 118);
             this.tbTcpClientResponse.Multiline = true;
             this.tbTcpClientResponse.Name = "tbTcpClientResponse";
             this.tbTcpClientResponse.ReadOnly = true;
             this.tbTcpClientResponse.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbTcpClientResponse.Size = new System.Drawing.Size(561, 180);
+            this.tbTcpClientResponse.Size = new System.Drawing.Size(561, 178);
             this.tbTcpClientResponse.TabIndex = 8;
             // 
             // btnTcpClientClear
             // 
             this.btnTcpClientClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTcpClientClear.Location = new System.Drawing.Point(493, 86);
+            this.btnTcpClientClear.Location = new System.Drawing.Point(496, 86);
             this.btnTcpClientClear.Name = "btnTcpClientClear";
-            this.btnTcpClientClear.Size = new System.Drawing.Size(75, 25);
+            this.btnTcpClientClear.Size = new System.Drawing.Size(74, 25);
             this.btnTcpClientClear.TabIndex = 8;
             this.btnTcpClientClear.Text = "clear";
             this.btnTcpClientClear.UseVisualStyleBackColor = true;
@@ -785,7 +808,7 @@
             this.cbTcpClientAddTailLn.AutoSize = true;
             this.cbTcpClientAddTailLn.Checked = true;
             this.cbTcpClientAddTailLn.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbTcpClientAddTailLn.Location = new System.Drawing.Point(79, 87);
+            this.cbTcpClientAddTailLn.Location = new System.Drawing.Point(75, 88);
             this.cbTcpClientAddTailLn.Name = "cbTcpClientAddTailLn";
             this.cbTcpClientAddTailLn.Size = new System.Drawing.Size(88, 22);
             this.cbTcpClientAddTailLn.TabIndex = 5;
@@ -795,7 +818,7 @@
             // btnTcpClientSend
             // 
             this.btnTcpClientSend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTcpClientSend.Location = new System.Drawing.Point(493, 56);
+            this.btnTcpClientSend.Location = new System.Drawing.Point(496, 55);
             this.btnTcpClientSend.Name = "btnTcpClientSend";
             this.btnTcpClientSend.Size = new System.Drawing.Size(74, 25);
             this.btnTcpClientSend.TabIndex = 4;
@@ -807,15 +830,15 @@
             // 
             this.tbTcpClientRequest.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbTcpClientRequest.Location = new System.Drawing.Point(75, 56);
+            this.tbTcpClientRequest.Location = new System.Drawing.Point(75, 55);
             this.tbTcpClientRequest.Name = "tbTcpClientRequest";
-            this.tbTcpClientRequest.Size = new System.Drawing.Size(412, 25);
+            this.tbTcpClientRequest.Size = new System.Drawing.Size(415, 25);
             this.tbTcpClientRequest.TabIndex = 3;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(14, 59);
+            this.label14.Location = new System.Drawing.Point(6, 59);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(57, 18);
             this.label14.TabIndex = 25;
@@ -823,7 +846,7 @@
             // 
             // tbTcpClientPort
             // 
-            this.tbTcpClientPort.Location = new System.Drawing.Point(235, 23);
+            this.tbTcpClientPort.Location = new System.Drawing.Point(231, 24);
             this.tbTcpClientPort.MaxLength = 5;
             this.tbTcpClientPort.Name = "tbTcpClientPort";
             this.tbTcpClientPort.Size = new System.Drawing.Size(131, 25);
@@ -832,7 +855,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(216, 26);
+            this.label15.Location = new System.Drawing.Point(212, 27);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(13, 18);
             this.label15.TabIndex = 22;
@@ -840,7 +863,7 @@
             // 
             // tbTcpClientIp
             // 
-            this.tbTcpClientIp.Location = new System.Drawing.Point(75, 23);
+            this.tbTcpClientIp.Location = new System.Drawing.Point(75, 24);
             this.tbTcpClientIp.MaxLength = 15;
             this.tbTcpClientIp.Name = "tbTcpClientIp";
             this.tbTcpClientIp.Size = new System.Drawing.Size(131, 25);
@@ -850,7 +873,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(14, 26);
+            this.label16.Location = new System.Drawing.Point(6, 27);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(55, 18);
             this.label16.TabIndex = 19;
@@ -878,6 +901,7 @@
             // 
             // cbTcpServerShowHexData
             // 
+            this.cbTcpServerShowHexData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cbTcpServerShowHexData.AutoSize = true;
             this.cbTcpServerShowHexData.Checked = true;
             this.cbTcpServerShowHexData.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -986,39 +1010,23 @@
             this.label18.TabIndex = 21;
             this.label18.Text = "port:";
             // 
-            // cbUdpClientHexMode
-            // 
-            this.cbUdpClientHexMode.AutoSize = true;
-            this.cbUdpClientHexMode.Location = new System.Drawing.Point(174, 87);
-            this.cbUdpClientHexMode.Name = "cbUdpClientHexMode";
-            this.cbUdpClientHexMode.Size = new System.Drawing.Size(81, 22);
-            this.cbUdpClientHexMode.TabIndex = 6;
-            this.cbUdpClientHexMode.Text = "HexMode";
-            this.cbUdpClientHexMode.UseVisualStyleBackColor = true;
-            // 
-            // cbTcpClientHexMode
-            // 
-            this.cbTcpClientHexMode.AutoSize = true;
-            this.cbTcpClientHexMode.Location = new System.Drawing.Point(173, 87);
-            this.cbTcpClientHexMode.Name = "cbTcpClientHexMode";
-            this.cbTcpClientHexMode.Size = new System.Drawing.Size(81, 22);
-            this.cbTcpClientHexMode.TabIndex = 6;
-            this.cbTcpClientHexMode.Text = "HexMode";
-            this.cbTcpClientHexMode.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 761);
             this.Controls.Add(this.tabControl1);
+            this.DataBindings.Add(new System.Windows.Forms.Binding("Location", global::NetworkViewer.Properties.Settings.Default, "NVLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Location = global::NetworkViewer.Properties.Settings.Default.NVLocation;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1050, 600);
             this.Name = "Form1";
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Text = "NetworkView";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Shown += new System.EventHandler(this.Form1_Shown);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
