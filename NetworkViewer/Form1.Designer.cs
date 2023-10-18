@@ -499,7 +499,7 @@
             // btnUdpClientClear
             // 
             this.btnUdpClientClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUdpClientClear.Location = new System.Drawing.Point(502, 87);
+            this.btnUdpClientClear.Location = new System.Drawing.Point(502, 86);
             this.btnUdpClientClear.Name = "btnUdpClientClear";
             this.btnUdpClientClear.Size = new System.Drawing.Size(75, 25);
             this.btnUdpClientClear.TabIndex = 8;
@@ -522,7 +522,7 @@
             // btnUdpClientSend
             // 
             this.btnUdpClientSend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUdpClientSend.Location = new System.Drawing.Point(503, 56);
+            this.btnUdpClientSend.Location = new System.Drawing.Point(503, 55);
             this.btnUdpClientSend.Name = "btnUdpClientSend";
             this.btnUdpClientSend.Size = new System.Drawing.Size(74, 25);
             this.btnUdpClientSend.TabIndex = 4;

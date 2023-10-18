@@ -10,7 +10,7 @@ namespace NetworkViewer {
     public partial class Form1 : Form {
         private UdpClient udpClientRecv;
         private UdpClient udpAsClient;
-
+        UdpController udpController4Client;
         private TcpListener tcpListener;
 
         public Form1() {
@@ -37,6 +37,7 @@ namespace NetworkViewer {
             } else {
                 General.ShowErrMsgBox("Cannot send UDP packet.");
             }
+            uc.Close();
         }
 
         // update UDP send TextBox
@@ -113,9 +114,14 @@ namespace NetworkViewer {
         //  UDP client
         // ------------------------------------------------------------
         private async void btnUdpClientSend_Click(object sender, EventArgs e) {
-            btnUdpClientSend.Enabled = false;
-            var task = RequestUdpAsync();
-            await task;
+            if(btnUdpClientSend.Text == "send") {
+                btnUdpClientSend.Text = "abort";
+                var task = RequestUdpAsync();
+                await task;
+            } else if(btnUdpClientSend.Text == "abort") {
+                udpController4Client.Close();
+                btnUdpClientSend.Text = "send";
+            }
         }
 
         private async Task RequestUdpAsync() {
@@ -124,14 +130,18 @@ namespace NetworkViewer {
             writeUdpClientTb("send request to " + ip + ":" + port);
             // send request
             string payload = tbUdpClientRequest.Text;
-            UdpController uc = new UdpController();
+            udpController4Client = new UdpController();
             UdpReceiveResult result;
             try {
                 // send request and get response
-                result = await uc.SendRecv(ip, port, payload, cbUdpClientHexMode.Checked, cbUdpClientAddTailLn.Checked);
+                result = await udpController4Client.SendRecv(ip, port, payload, cbUdpClientHexMode.Checked, cbUdpClientAddTailLn.Checked);
             } catch(SocketException err) {
                 writeUdpClientTb("err : " + err.Message);
-                btnUdpClientSend.Enabled = true;
+                btnUdpClientSend.Text = "send";
+                return;
+            } catch(Exception err) {
+                writeUdpClientTb(err.Message);
+                btnUdpClientSend.Text = "send";
                 return;
             }
 
@@ -142,7 +152,7 @@ namespace NetworkViewer {
             if(cbUdpClientShowHexData.Checked) {
                 writeUdpClientTb("hex data:" + Environment.NewLine + General.GetHexDataString(responseBytes));
             }
-            btnUdpClientSend.Enabled = true;
+            btnUdpClientSend.Text = "send";
 
         }
         // update UDP client TextBox

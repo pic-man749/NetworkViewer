@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 namespace NetworkViewer {
     internal class UdpController {
 
+        UdpClient udpClient;
+
         public UdpController() {
 
         }
 
         // UDP Send
         public async Task<int> Send(string ipAddr, int port, string payload, bool isHexMode, bool needLn) {
-            UdpClient udpClient = new UdpClient();
+            udpClient = new UdpClient();
             return await Send(ipAddr, port, payload, isHexMode, needLn, udpClient);
         }
         public async Task<int> Send(string ipAddr, int port, string payload, bool isHexMode, bool needLn, UdpClient udpClient) {
@@ -52,12 +54,22 @@ namespace NetworkViewer {
 
         // Send and Recv
         public async Task<UdpReceiveResult> SendRecv(string ipAddr, int port, string payload, bool isHexMode, bool needLn) {
-            UdpClient udpClient = new UdpClient();
+            udpClient = new UdpClient();
             int res = await Send(ipAddr, port, payload, isHexMode, needLn, udpClient);
 
-            UdpReceiveResult result = await udpClient.ReceiveAsync();
+
+            UdpReceiveResult result;
+            try {
+                result = await udpClient.ReceiveAsync();
+            } catch {
+                throw new Exception("aborted");
+            }
             
             return result;
+        }
+
+        public void Close() {
+            udpClient.Close();
         }
 
         // UDP Recv
