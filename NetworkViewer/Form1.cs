@@ -26,7 +26,13 @@ namespace NetworkViewer {
         // ------------------------------------------------------------
         private async void btnUdpSend_Click(object sender, EventArgs e) {
             string ipAddr = tbUdpSendIp.Text;
-            int port = int.Parse(tbUdpSendPort.Text);
+            int port;
+            try {
+                port = int.Parse(tbUdpSendPort.Text);
+            } catch {
+                General.ShowErrMsgBox("Please input valid port num.");
+                return;
+            }
             string payload = tbUdpSendPayload.Text;
 
             UdpController uc = new UdpController();
@@ -73,6 +79,7 @@ namespace NetworkViewer {
                 clientEp = new IPEndPoint(IPAddress.Any, int.Parse(tbUdpRecvPort.Text));
             } catch {
                 General.ShowErrMsgBox("Please input valid port num.");
+                this.btnUdpRecvListen.Text = "listen";
                 return;
             }
             writeUdpRecvTb("start listen @localhost:" + tbUdpRecvPort.Text);
@@ -126,7 +133,14 @@ namespace NetworkViewer {
 
         private async Task RequestUdpAsync() {
             string ip = tbUdpClientIp.Text;
-            int port = int.Parse(tbUdpClientPort.Text);
+            int port;
+            try {
+                port = int.Parse(tbUdpClientPort.Text);
+            } catch {
+                General.ShowErrMsgBox("Please input valid port num.");
+                btnUdpClientSend.Text = "send";
+                return;
+            }
             writeUdpClientTb("send request to " + ip + ":" + port);
             // send request
             string payload = tbUdpClientRequest.Text;
@@ -242,7 +256,15 @@ namespace NetworkViewer {
         }
         private async Task tcpAsClient() { 
             string ipAddr = tbTcpClientIp.Text;
-            int port = int.Parse(tbTcpClientPort.Text);
+
+            int port;
+            try {
+                port = int.Parse(tbTcpClientPort.Text);
+            } catch {
+                General.ShowErrMsgBox("Please input valid port num.");
+                btnTcpClientSend.Enabled = true;
+                return;
+            }
             string payload = tbTcpClientRequest.Text;
 
             byte[] sendBytes = General.String2Bytes(payload, cbTcpClientHexMode.Checked, cbTcpClientAddTailLn.Checked);
@@ -332,7 +354,15 @@ namespace NetworkViewer {
 
         private async Task tcpServer() {
 
-            int port = int.Parse(tbTcpServerPort.Text);
+
+            int port;
+            try {
+                port = int.Parse(tbTcpServerPort.Text);
+            } catch {
+                General.ShowErrMsgBox("Please input valid port num.");
+                btnTcpServerListen.Text = "listen";
+                return;
+            }
 
             IPEndPoint serverEp;
             try {
