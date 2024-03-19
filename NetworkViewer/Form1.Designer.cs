@@ -1274,9 +1274,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(6, 27);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(32, 18);
+            this.label8.Size = new System.Drawing.Size(37, 18);
             this.label8.TabIndex = 37;
-            this.label8.Text = "port";
+            this.label8.Text = "port:";
             // 
             // btnTcpConServerSend
             // 
