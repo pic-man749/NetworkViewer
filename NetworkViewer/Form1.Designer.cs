@@ -102,6 +102,36 @@
             this.btnTcpServerListen = new System.Windows.Forms.Button();
             this.tbTcpServerPort = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer7 = new System.Windows.Forms.SplitContainer();
+            this.cbTcpConClientHexMode = new System.Windows.Forms.CheckBox();
+            this.btnTcpConClientClear = new System.Windows.Forms.Button();
+            this.cbTcpConClientAddLf = new System.Windows.Forms.CheckBox();
+            this.btnTcpConClientSend = new System.Windows.Forms.Button();
+            this.tbTcpConClientReq = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tbTcpConPort = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tbTcpConIp = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tbTcpConServerPort = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnTcpConServerSend = new System.Windows.Forms.Button();
+            this.tbTcpConServerReq = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.btnTcpConListen = new System.Windows.Forms.Button();
+            this.cbTcpConServerHexMode = new System.Windows.Forms.CheckBox();
+            this.btnTcpConServerClear = new System.Windows.Forms.Button();
+            this.cbTcpConServerAddLf = new System.Windows.Forms.CheckBox();
+            this.btnTcpConConnect = new System.Windows.Forms.Button();
+            this.tbTcpConClientLog = new System.Windows.Forms.TextBox();
+            this.tbTcpConClientBin = new System.Windows.Forms.TextBox();
+            this.tbTcpConServerLog = new System.Windows.Forms.TextBox();
+            this.tbTcpConServerBin = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -127,12 +157,28 @@
             this.splitContainer6.SuspendLayout();
             this.TcpAsClient.SuspendLayout();
             this.TcpAsServer.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
+            this.splitContainer3.Panel1.SuspendLayout();
+            this.splitContainer3.Panel2.SuspendLayout();
+            this.splitContainer3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).BeginInit();
+            this.splitContainer7.Panel1.SuspendLayout();
+            this.splitContainer7.Panel2.SuspendLayout();
+            this.splitContainer7.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(5, 5);
             this.tabControl1.Name = "tabControl1";
@@ -1010,6 +1056,360 @@
             this.label18.TabIndex = 21;
             this.label18.Text = "port:";
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.splitContainer2);
+            this.tabPage3.Location = new System.Drawing.Point(4, 27);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1166, 720);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "TCP connection";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.groupBox1);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.groupBox2);
+            this.splitContainer2.Size = new System.Drawing.Size(1160, 714);
+            this.splitContainer2.SplitterDistance = 580;
+            this.splitContainer2.TabIndex = 2;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.cbTcpConServerHexMode);
+            this.groupBox2.Controls.Add(this.btnTcpConServerClear);
+            this.groupBox2.Controls.Add(this.cbTcpConServerAddLf);
+            this.groupBox2.Controls.Add(this.btnTcpConListen);
+            this.groupBox2.Controls.Add(this.btnTcpConServerSend);
+            this.groupBox2.Controls.Add(this.tbTcpConServerReq);
+            this.groupBox2.Controls.Add(this.label19);
+            this.groupBox2.Controls.Add(this.tbTcpConServerPort);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.splitContainer7);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(0, 0);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(576, 714);
+            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "TCP server";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnTcpConConnect);
+            this.groupBox1.Controls.Add(this.cbTcpConClientHexMode);
+            this.groupBox1.Controls.Add(this.btnTcpConClientClear);
+            this.groupBox1.Controls.Add(this.cbTcpConClientAddLf);
+            this.groupBox1.Controls.Add(this.btnTcpConClientSend);
+            this.groupBox1.Controls.Add(this.tbTcpConClientReq);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.tbTcpConPort);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.tbTcpConIp);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.splitContainer3);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(580, 714);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "TCP client";
+            // 
+            // splitContainer3
+            // 
+            this.splitContainer3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer3.Location = new System.Drawing.Point(6, 117);
+            this.splitContainer3.Name = "splitContainer3";
+            this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer3.Panel1
+            // 
+            this.splitContainer3.Panel1.Controls.Add(this.tbTcpConClientLog);
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.Controls.Add(this.tbTcpConClientBin);
+            this.splitContainer3.Size = new System.Drawing.Size(568, 591);
+            this.splitContainer3.SplitterDistance = 282;
+            this.splitContainer3.TabIndex = 0;
+            // 
+            // splitContainer7
+            // 
+            this.splitContainer7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer7.Location = new System.Drawing.Point(6, 117);
+            this.splitContainer7.Name = "splitContainer7";
+            this.splitContainer7.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer7.Panel1
+            // 
+            this.splitContainer7.Panel1.Controls.Add(this.tbTcpConServerLog);
+            // 
+            // splitContainer7.Panel2
+            // 
+            this.splitContainer7.Panel2.Controls.Add(this.tbTcpConServerBin);
+            this.splitContainer7.Size = new System.Drawing.Size(564, 591);
+            this.splitContainer7.SplitterDistance = 282;
+            this.splitContainer7.TabIndex = 1;
+            // 
+            // cbTcpConClientHexMode
+            // 
+            this.cbTcpConClientHexMode.AutoSize = true;
+            this.cbTcpConClientHexMode.Location = new System.Drawing.Point(175, 88);
+            this.cbTcpConClientHexMode.Name = "cbTcpConClientHexMode";
+            this.cbTcpConClientHexMode.Size = new System.Drawing.Size(81, 22);
+            this.cbTcpConClientHexMode.TabIndex = 31;
+            this.cbTcpConClientHexMode.Text = "HexMode";
+            this.cbTcpConClientHexMode.UseVisualStyleBackColor = true;
+            // 
+            // btnTcpConClientClear
+            // 
+            this.btnTcpConClientClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTcpConClientClear.Location = new System.Drawing.Point(499, 86);
+            this.btnTcpConClientClear.Name = "btnTcpConClientClear";
+            this.btnTcpConClientClear.Size = new System.Drawing.Size(74, 25);
+            this.btnTcpConClientClear.TabIndex = 34;
+            this.btnTcpConClientClear.Text = "clear";
+            this.btnTcpConClientClear.UseVisualStyleBackColor = true;
+            // 
+            // cbTcpConClientAddLf
+            // 
+            this.cbTcpConClientAddLf.AutoSize = true;
+            this.cbTcpConClientAddLf.Checked = true;
+            this.cbTcpConClientAddLf.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbTcpConClientAddLf.Location = new System.Drawing.Point(81, 88);
+            this.cbTcpConClientAddLf.Name = "cbTcpConClientAddLf";
+            this.cbTcpConClientAddLf.Size = new System.Drawing.Size(88, 22);
+            this.cbTcpConClientAddLf.TabIndex = 30;
+            this.cbTcpConClientAddLf.Text = "add tail \\n";
+            this.cbTcpConClientAddLf.UseVisualStyleBackColor = true;
+            // 
+            // btnTcpConClientSend
+            // 
+            this.btnTcpConClientSend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTcpConClientSend.Location = new System.Drawing.Point(499, 55);
+            this.btnTcpConClientSend.Name = "btnTcpConClientSend";
+            this.btnTcpConClientSend.Size = new System.Drawing.Size(74, 25);
+            this.btnTcpConClientSend.TabIndex = 29;
+            this.btnTcpConClientSend.Text = "send";
+            this.btnTcpConClientSend.UseVisualStyleBackColor = true;
+            // 
+            // tbTcpConClientReq
+            // 
+            this.tbTcpConClientReq.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbTcpConClientReq.Location = new System.Drawing.Point(81, 55);
+            this.tbTcpConClientReq.Name = "tbTcpConClientReq";
+            this.tbTcpConClientReq.Size = new System.Drawing.Size(415, 25);
+            this.tbTcpConClientReq.TabIndex = 28;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 58);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(57, 18);
+            this.label5.TabIndex = 37;
+            this.label5.Text = "request:";
+            // 
+            // tbTcpConPort
+            // 
+            this.tbTcpConPort.Location = new System.Drawing.Point(237, 24);
+            this.tbTcpConPort.MaxLength = 5;
+            this.tbTcpConPort.Name = "tbTcpConPort";
+            this.tbTcpConPort.Size = new System.Drawing.Size(131, 25);
+            this.tbTcpConPort.TabIndex = 27;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(218, 27);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(13, 18);
+            this.label6.TabIndex = 36;
+            this.label6.Text = ":";
+            // 
+            // tbTcpConIp
+            // 
+            this.tbTcpConIp.Location = new System.Drawing.Point(81, 24);
+            this.tbTcpConIp.MaxLength = 15;
+            this.tbTcpConIp.Name = "tbTcpConIp";
+            this.tbTcpConIp.Size = new System.Drawing.Size(131, 25);
+            this.tbTcpConIp.TabIndex = 26;
+            this.tbTcpConIp.Text = "127.0.0.1";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 27);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(55, 18);
+            this.label7.TabIndex = 35;
+            this.label7.Text = "ip : port";
+            // 
+            // tbTcpConServerPort
+            // 
+            this.tbTcpConServerPort.Location = new System.Drawing.Point(73, 24);
+            this.tbTcpConServerPort.MaxLength = 5;
+            this.tbTcpConServerPort.Name = "tbTcpConServerPort";
+            this.tbTcpConServerPort.Size = new System.Drawing.Size(131, 25);
+            this.tbTcpConServerPort.TabIndex = 36;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 27);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(32, 18);
+            this.label8.TabIndex = 37;
+            this.label8.Text = "port";
+            // 
+            // btnTcpConServerSend
+            // 
+            this.btnTcpConServerSend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTcpConServerSend.Location = new System.Drawing.Point(499, 55);
+            this.btnTcpConServerSend.Name = "btnTcpConServerSend";
+            this.btnTcpConServerSend.Size = new System.Drawing.Size(74, 25);
+            this.btnTcpConServerSend.TabIndex = 39;
+            this.btnTcpConServerSend.Text = "send";
+            this.btnTcpConServerSend.UseVisualStyleBackColor = true;
+            // 
+            // tbTcpConServerReq
+            // 
+            this.tbTcpConServerReq.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbTcpConServerReq.Location = new System.Drawing.Point(73, 55);
+            this.tbTcpConServerReq.Name = "tbTcpConServerReq";
+            this.tbTcpConServerReq.Size = new System.Drawing.Size(420, 25);
+            this.tbTcpConServerReq.TabIndex = 38;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(6, 58);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(57, 18);
+            this.label19.TabIndex = 40;
+            this.label19.Text = "request:";
+            // 
+            // btnTcpConListen
+            // 
+            this.btnTcpConListen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTcpConListen.Location = new System.Drawing.Point(499, 24);
+            this.btnTcpConListen.Name = "btnTcpConListen";
+            this.btnTcpConListen.Size = new System.Drawing.Size(74, 25);
+            this.btnTcpConListen.TabIndex = 41;
+            this.btnTcpConListen.Text = "listen";
+            this.btnTcpConListen.UseVisualStyleBackColor = true;
+            // 
+            // cbTcpConServerHexMode
+            // 
+            this.cbTcpConServerHexMode.AutoSize = true;
+            this.cbTcpConServerHexMode.Location = new System.Drawing.Point(175, 88);
+            this.cbTcpConServerHexMode.Name = "cbTcpConServerHexMode";
+            this.cbTcpConServerHexMode.Size = new System.Drawing.Size(81, 22);
+            this.cbTcpConServerHexMode.TabIndex = 43;
+            this.cbTcpConServerHexMode.Text = "HexMode";
+            this.cbTcpConServerHexMode.UseVisualStyleBackColor = true;
+            // 
+            // btnTcpConServerClear
+            // 
+            this.btnTcpConServerClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTcpConServerClear.Location = new System.Drawing.Point(499, 86);
+            this.btnTcpConServerClear.Name = "btnTcpConServerClear";
+            this.btnTcpConServerClear.Size = new System.Drawing.Size(74, 25);
+            this.btnTcpConServerClear.TabIndex = 45;
+            this.btnTcpConServerClear.Text = "clear";
+            this.btnTcpConServerClear.UseVisualStyleBackColor = true;
+            // 
+            // cbTcpConServerAddLf
+            // 
+            this.cbTcpConServerAddLf.AutoSize = true;
+            this.cbTcpConServerAddLf.Checked = true;
+            this.cbTcpConServerAddLf.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbTcpConServerAddLf.Location = new System.Drawing.Point(81, 88);
+            this.cbTcpConServerAddLf.Name = "cbTcpConServerAddLf";
+            this.cbTcpConServerAddLf.Size = new System.Drawing.Size(88, 22);
+            this.cbTcpConServerAddLf.TabIndex = 42;
+            this.cbTcpConServerAddLf.Text = "add tail \\n";
+            this.cbTcpConServerAddLf.UseVisualStyleBackColor = true;
+            // 
+            // btnTcpConConnect
+            // 
+            this.btnTcpConConnect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTcpConConnect.Location = new System.Drawing.Point(499, 24);
+            this.btnTcpConConnect.Name = "btnTcpConConnect";
+            this.btnTcpConConnect.Size = new System.Drawing.Size(74, 25);
+            this.btnTcpConConnect.TabIndex = 42;
+            this.btnTcpConConnect.Text = "connect";
+            this.btnTcpConConnect.UseVisualStyleBackColor = true;
+            // 
+            // tbTcpConClientLog
+            // 
+            this.tbTcpConClientLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbTcpConClientLog.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tbTcpConClientLog.HideSelection = false;
+            this.tbTcpConClientLog.Location = new System.Drawing.Point(0, 0);
+            this.tbTcpConClientLog.Multiline = true;
+            this.tbTcpConClientLog.Name = "tbTcpConClientLog";
+            this.tbTcpConClientLog.ReadOnly = true;
+            this.tbTcpConClientLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbTcpConClientLog.Size = new System.Drawing.Size(568, 282);
+            this.tbTcpConClientLog.TabIndex = 9;
+            // 
+            // tbTcpConClientBin
+            // 
+            this.tbTcpConClientBin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbTcpConClientBin.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tbTcpConClientBin.HideSelection = false;
+            this.tbTcpConClientBin.Location = new System.Drawing.Point(0, 0);
+            this.tbTcpConClientBin.Multiline = true;
+            this.tbTcpConClientBin.Name = "tbTcpConClientBin";
+            this.tbTcpConClientBin.ReadOnly = true;
+            this.tbTcpConClientBin.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbTcpConClientBin.Size = new System.Drawing.Size(568, 305);
+            this.tbTcpConClientBin.TabIndex = 10;
+            // 
+            // tbTcpConServerLog
+            // 
+            this.tbTcpConServerLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbTcpConServerLog.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tbTcpConServerLog.HideSelection = false;
+            this.tbTcpConServerLog.Location = new System.Drawing.Point(0, 0);
+            this.tbTcpConServerLog.Multiline = true;
+            this.tbTcpConServerLog.Name = "tbTcpConServerLog";
+            this.tbTcpConServerLog.ReadOnly = true;
+            this.tbTcpConServerLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbTcpConServerLog.Size = new System.Drawing.Size(564, 282);
+            this.tbTcpConServerLog.TabIndex = 10;
+            // 
+            // tbTcpConServerBin
+            // 
+            this.tbTcpConServerBin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbTcpConServerBin.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.tbTcpConServerBin.HideSelection = false;
+            this.tbTcpConServerBin.Location = new System.Drawing.Point(0, 0);
+            this.tbTcpConServerBin.Multiline = true;
+            this.tbTcpConServerBin.Name = "tbTcpConServerBin";
+            this.tbTcpConServerBin.ReadOnly = true;
+            this.tbTcpConServerBin.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbTcpConServerBin.Size = new System.Drawing.Size(564, 305);
+            this.tbTcpConServerBin.TabIndex = 11;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 18F);
@@ -1058,6 +1458,27 @@
             this.TcpAsClient.PerformLayout();
             this.TcpAsServer.ResumeLayout(false);
             this.TcpAsServer.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.splitContainer3.Panel1.ResumeLayout(false);
+            this.splitContainer3.Panel1.PerformLayout();
+            this.splitContainer3.Panel2.ResumeLayout(false);
+            this.splitContainer3.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
+            this.splitContainer3.ResumeLayout(false);
+            this.splitContainer7.Panel1.ResumeLayout(false);
+            this.splitContainer7.Panel1.PerformLayout();
+            this.splitContainer7.Panel2.ResumeLayout(false);
+            this.splitContainer7.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).EndInit();
+            this.splitContainer7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1138,6 +1559,36 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox cbUdpClientHexMode;
         private System.Windows.Forms.CheckBox cbTcpClientHexMode;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.SplitContainer splitContainer3;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.SplitContainer splitContainer7;
+        private System.Windows.Forms.CheckBox cbTcpConClientHexMode;
+        private System.Windows.Forms.Button btnTcpConClientClear;
+        private System.Windows.Forms.CheckBox cbTcpConClientAddLf;
+        private System.Windows.Forms.Button btnTcpConClientSend;
+        private System.Windows.Forms.TextBox tbTcpConClientReq;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox tbTcpConPort;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox tbTcpConIp;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnTcpConServerSend;
+        private System.Windows.Forms.TextBox tbTcpConServerReq;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox tbTcpConServerPort;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnTcpConConnect;
+        private System.Windows.Forms.CheckBox cbTcpConServerHexMode;
+        private System.Windows.Forms.Button btnTcpConServerClear;
+        private System.Windows.Forms.CheckBox cbTcpConServerAddLf;
+        private System.Windows.Forms.Button btnTcpConListen;
+        private System.Windows.Forms.TextBox tbTcpConClientLog;
+        private System.Windows.Forms.TextBox tbTcpConClientBin;
+        private System.Windows.Forms.TextBox tbTcpConServerLog;
+        private System.Windows.Forms.TextBox tbTcpConServerBin;
     }
 }
 
