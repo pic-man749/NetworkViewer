@@ -1185,6 +1185,7 @@
             this.btnTcpConClientClear.TabIndex = 34;
             this.btnTcpConClientClear.Text = "clear";
             this.btnTcpConClientClear.UseVisualStyleBackColor = true;
+            this.btnTcpConClientClear.Click += new System.EventHandler(this.btnTcpConClientClear_Click);
             // 
             // cbTcpConClientAddLf
             // 
@@ -1207,6 +1208,7 @@
             this.btnTcpConClientSend.TabIndex = 29;
             this.btnTcpConClientSend.Text = "send";
             this.btnTcpConClientSend.UseVisualStyleBackColor = true;
+            this.btnTcpConClientSend.Click += new System.EventHandler(this.btnTcpConClientSend_Click);
             // 
             // tbTcpConClientReq
             // 
@@ -1287,6 +1289,7 @@
             this.btnTcpConServerSend.TabIndex = 39;
             this.btnTcpConServerSend.Text = "send";
             this.btnTcpConServerSend.UseVisualStyleBackColor = true;
+            this.btnTcpConServerSend.Click += new System.EventHandler(this.btnTcpConServerSend_Click);
             // 
             // tbTcpConServerReq
             // 
@@ -1315,6 +1318,7 @@
             this.btnTcpConListen.TabIndex = 41;
             this.btnTcpConListen.Text = "listen";
             this.btnTcpConListen.UseVisualStyleBackColor = true;
+            this.btnTcpConListen.Click += new System.EventHandler(this.btnTcpConListen_Click);
             // 
             // cbTcpConServerHexMode
             // 
@@ -1335,6 +1339,7 @@
             this.btnTcpConServerClear.TabIndex = 45;
             this.btnTcpConServerClear.Text = "clear";
             this.btnTcpConServerClear.UseVisualStyleBackColor = true;
+            this.btnTcpConServerClear.Click += new System.EventHandler(this.btnTcpConServerClear_Click);
             // 
             // cbTcpConServerAddLf
             // 
@@ -1357,6 +1362,7 @@
             this.btnTcpConConnect.TabIndex = 42;
             this.btnTcpConConnect.Text = "connect";
             this.btnTcpConConnect.UseVisualStyleBackColor = true;
+            this.btnTcpConConnect.Click += new System.EventHandler(this.btnTcpConConnect_Click);
             // 
             // tbTcpConClientLog
             // 
