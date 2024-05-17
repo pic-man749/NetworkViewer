@@ -483,6 +483,18 @@ namespace NetworkViewer {
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e) {
             Properties.Settings.Default.Save();
+            cts4TcpConServer.Cancel();
+            cts4TcpConClient.Cancel();
+
+            if(tcpConClientSocket != null) {
+                tcpConClientSocket.Close();
+            }
+            if(tcpConServerSocket != null) {
+                tcpConServerSocket.Close();
+            }
+            if(tcpConServerHandler != null) {
+                tcpConServerHandler.Close();
+            }
         }
 
         private void Form1_Shown(object sender, EventArgs e) {
