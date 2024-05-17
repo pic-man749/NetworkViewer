@@ -12,7 +12,9 @@ namespace NetworkViewer {
     public partial class Form1 {
         Socket tcpConClientSocket = null;
         Socket tcpConServerSocket = null;
+        Socket tcpConServerHandler = null;
         CancellationTokenSource cts4TcpConServer = new CancellationTokenSource();
+        CancellationTokenSource cts4TcpConClient = new CancellationTokenSource();
 
         private void btnTcpConConnect_Click(object sender, EventArgs e) {
             // open
@@ -40,6 +42,10 @@ namespace NetworkViewer {
                 }
                 writeTcpConClientTb("Connection established @" + ipAddr.ToString() + ":" + portNum.ToString());
                 btnTcpConConnect.Text = "close";
+
+                Thread t = new Thread(new ParameterizedThreadStart(ThreadTcpConClientRecv));
+                cts4TcpConClient = new CancellationTokenSource();
+                t.Start(cts4TcpConClient.Token);
             }
             // close
             else {
@@ -50,6 +56,30 @@ namespace NetworkViewer {
                     writeTcpConClientTb("Connection closed.");
                 }
                 btnTcpConConnect.Text = "connect";
+            }
+        }
+
+        private void ThreadTcpConClientRecv(object ct) {
+
+            while(true) {
+                if(cts4TcpConClient.Token.IsCancellationRequested) {
+                    writeTcpConServerTb("Thread exit.");
+                    return;
+                }
+                var buffer = new byte[1600];
+                int received;
+                try {
+                    received = tcpConClientSocket.Receive(buffer, SocketFlags.None);
+                } catch(TimeoutException ex) {
+                    continue;
+                } catch {
+                    return;
+                }
+                byte[] tmp = new byte[received];
+                Array.Copy(buffer, 0, tmp, 0, received);
+                string data = System.Text.Encoding.UTF8.GetString(tmp);
+                writeTcpConClientTb("Recved Data " + received.ToString() + "[byte] : " + data);
+                writeTcpConClientBinTb(tmp);
             }
         }
 
@@ -98,7 +128,7 @@ namespace NetworkViewer {
                 cts4TcpConServer = new CancellationTokenSource();
                 t.Start(cts4TcpConServer.Token);
 
-            } 
+            }
             // stop
             else {
                 if(tcpConServerSocket != null) {
@@ -114,11 +144,9 @@ namespace NetworkViewer {
         }
 
         private void ThreadTcpConServerRecv(object ct) {
-            Socket handler;
 
             try {
-                handler = tcpConServerSocket.Accept();
-                // handler.ReceiveTimeout = 100;
+                tcpConServerHandler = tcpConServerSocket.Accept();
             } catch {
                 writeTcpConServerTb("Canceled waiting accept");
                 return;
@@ -126,17 +154,21 @@ namespace NetworkViewer {
 
             writeTcpConServerTb("Request accepted.");
             while(true) {
-                if(((CancellationToken)ct).IsCancellationRequested) {
+                if(cts4TcpConServer.IsCancellationRequested) {
                     writeTcpConServerTb("Thread exit.");
                     return;
                 }
                 var buffer = new byte[1600];
                 int received;
                 try {
-                    received = handler.Receive(buffer, SocketFlags.None);
-                } catch (TimeoutException ex) {
+                    received = tcpConServerHandler.Receive(buffer, SocketFlags.None);
+                } catch(TimeoutException ex) {
                     continue;
                 } catch {
+                    return;
+                }
+
+                if(!tcpConServerHandler.Connected) {
                     return;
                 }
                 byte[] tmp = new byte[received];
@@ -148,7 +180,13 @@ namespace NetworkViewer {
         }
 
         private void btnTcpConServerSend_Click(object sender, EventArgs e) {
+            if(tcpConServerHandler == null) {
+                General.ShowErrMsgBox("Connection does not established.");
+                return;
+            }
 
+            var data = General.String2Bytes(tbTcpConServerReq.Text, cbTcpConServerHexMode.Checked, cbTcpConServerAddLf.Checked);
+            tcpConServerHandler.Send(data);
         }
 
         private void btnTcpConServerClear_Click(object sender, EventArgs e) {
